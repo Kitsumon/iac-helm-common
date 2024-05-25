@@ -7,6 +7,6 @@ entries:
     digest: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
     name: common-templates
     urls:
-    - charts/common-templates/common-templates-0.6.0.tgz
-    version: 0.6.0
+    - charts/common-templates/common-templates-0.7.0.tgz
+    version: 0.7.0
 generated: '2024-05-25T16:41:04Z'
