@@ -1,5 +1,6 @@
 {{- define "common.hpa" -}}
 {{- if .Values.autoscaling.enabled }}
+{{- "\n---\n" -}}
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:

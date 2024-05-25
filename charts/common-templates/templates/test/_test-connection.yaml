@@ -1,4 +1,5 @@
 {{- define "common.test-connection" -}}
+{{- "\n---\n" -}}
 apiVersion: v1
 kind: Pod
 metadata:

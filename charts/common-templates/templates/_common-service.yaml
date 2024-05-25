@@ -1,4 +1,5 @@
 {{- define "common.service" -}}
+{{- "\n---\n" -}}
 apiVersion: v1
 kind: Service
 metadata:
