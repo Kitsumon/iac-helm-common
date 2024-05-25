@@ -11,16 +11,16 @@ metadata:
     {{- include "common.labels" . | nindent 4 }}
   {{- with .Values.ingress.annotations }}
   annotations:
-    {{- toYaml . | nindent 4 }}
-    {{- if default false .Values.ingress.stickySessions }}
-    nginx.ingress.kubernetes.io/affinity: "cookie"
-    nginx.ingress.kubernetes.io/affinity-mode: "balanced"
-    nginx.ingress.kubernetes.io/session-cookie-name: "{{ .Values.ingress.cookieName | default "SESSIONID" }}"
-    nginx.ingress.kubernetes.io/session-cookie-path: "/"
-    nginx.ingress.kubernetes.io/session-cookie-samesite: "None"
-    nginx.ingress.kubernetes.io/session-cookie-secure: "true"
-    {{- end }}
-  {{- end }}
+  #   {{- toYaml . | nindent 4 }}
+  #   {{- if default false .Values.ingress.stickySessions }}
+  #   nginx.ingress.kubernetes.io/affinity: "cookie"
+  #   nginx.ingress.kubernetes.io/affinity-mode: "balanced"
+  #   nginx.ingress.kubernetes.io/session-cookie-name: "{{ .Values.ingress.cookieName | default "SESSIONID" }}"
+  #   nginx.ingress.kubernetes.io/session-cookie-path: "/"
+  #   nginx.ingress.kubernetes.io/session-cookie-samesite: "None"
+  #   nginx.ingress.kubernetes.io/session-cookie-secure: "true"
+  #   {{- end }}
+  # {{- end }}
 spec:
   {{- if .Values.ingress.className }}
   ingressClassName: {{ .Values.ingress.className }}
