@@ -12,7 +12,7 @@ metadata:
   {{- with .Values.ingress.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
-    {{- if .Values.ingress.stickySessions }}
+    {{- if default false .Values.ingress.stickySessions }}
     nginx.ingress.kubernetes.io/affinity: "cookie"
     nginx.ingress.kubernetes.io/affinity-mode: "balanced"
     nginx.ingress.kubernetes.io/session-cookie-name: "{{ .Values.ingress.cookieName | default "SESSIONID" }}"
