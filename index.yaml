@@ -2,11 +2,30 @@ apiVersion: v1
 entries:
   common-templates:
   - apiVersion: v2
-    appVersion: ''
+    created: "2025-02-23T21:33:56.9647678Z"
     description: A Helm chart for common templates
-    digest: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    digest: 5d31f21ce87637cf5c79f003c9c0d58afe27a089ba54ce76a14092fc2c71823e
     name: common-templates
+    type: library
     urls:
-    - charts/common-templates/common-templates-0.9.0.tgz
+    - common-templates-0.10.0.tgz
+    version: 0.10.0
+  - apiVersion: v2
+    created: "2025-02-23T21:33:56.9652868Z"
+    description: A Helm chart for common templates
+    digest: 1c60474f888ca19c721bdfcc8d371a424e2ee350b909e66d4784d1b3d299a5fc
+    name: common-templates
+    type: library
+    urls:
+    - common-templates-0.9.0.tgz
     version: 0.9.0
-generated: '2024-05-25T16:41:04Z'
+  - apiVersion: v2
+    created: "2025-02-23T21:33:56.9647678Z"
+    description: A Helm chart for common templates
+    digest: d4105bfa0e2845214928576f81e3da17ec2fec648c013c117d5b978bd5264873
+    name: common-templates
+    type: library
+    urls:
+    - common-templates-0.8.0.tgz
+    version: 0.8.0
+generated: "2025-02-23T21:33:56.9642511Z"
