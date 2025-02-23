@@ -1,4 +1,4 @@
-{{- define "common.deployment" -}}
+{{- define "common.deployment" -}} 
 {{- "\n---\n" -}}
 apiVersion: apps/v1
 kind: Deployment
@@ -41,16 +41,25 @@ spec:
             - name: http
               containerPort: 80
               protocol: TCP
-          {{- with .Values.volumeMounts }}
           volumeMounts:
+            {{- if .Values.persistence.enabled }}
+            - name: persistence
+              mountPath: {{ .Values.persistence.mountPath }}
+            {{- end }}
+            {{- with .Values.volumeMounts }}
             {{- toYaml . | nindent 12 }}
-          {{- end }}
+            {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-      {{- with .Values.volumes }}
       volumes:
+        {{- if .Values.persistence.enabled }}
+        - name: persistence
+          persistentVolumeClaim:
+            claimName: {{ include "common.fullname" . }}-persistence
+        {{- end }}
+        {{- with .Values.volumes }}
         {{- toYaml . | nindent 6 }}
-      {{- end }}
+        {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
